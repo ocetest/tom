@@ -12,7 +12,7 @@ request.setAttribute("name", name1);
 </head>
 
 <body>
-<h1>Improve some function</h1>
+<h1>Improve some functions</h1>
 
 <h2>20170513! You are  <%=name1 %> !</h2>
 </body>
