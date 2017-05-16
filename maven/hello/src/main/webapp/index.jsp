@@ -8,13 +8,13 @@ request.setAttribute("name", name1);
 %>
 <html>
 <head>
-<title> One China  hong</title>
+<title> Two China  hong</title>
 
 </head>
 
 <body>
 <h1>Improve some functions</h1>
 
-<h2>20170513! You are  <%=name1 %> !</h2>
+<h2>20170516! You are  <%=name1 %> !</h2>
 </body>
 </html>
