@@ -26,4 +26,4 @@ RUN cd /opt && \
 ADD hello /hello
 RUN cd /hello && \
 #    mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
-    mvn tomcat7:deploy
+    mvn tomcat7:redeploy
