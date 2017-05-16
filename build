@@ -11,13 +11,13 @@ if sudo docker ps -a | grep -i maven; then
    sudo docker rm -f maven
 fi
 sudo docker create --name maven bj/maven:3.5.0
-sudo docker cp maven:/hello/target/hello.war $WORKSPACE/hello
-sudo docker build -t $REGISTRY_URL/bj/hello:1.0 $WORKSPACE/hello
-sudo docker push $REGISTRY_URL/bj/hello:1.0
-if sudo docker ps -a | grep -i hello;then
-   sudo docker rm -f hello
-fi
-sudo docker run -d -p 80:8080 --name hello --link oceoracle:linksql $REGISTRY_URL/bj/hello:1.0
+#sudo docker cp maven:/hello/target/hello.war $WORKSPACE/hello
+#sudo docker build -t $REGISTRY_URL/bj/hello:1.0 $WORKSPACE/hello
+#sudo docker push $REGISTRY_URL/bj/hello:1.0
+#if sudo docker ps -a | grep -i hello;then
+#   sudo docker rm -f hello
+#fi
+#sudo docker run -d -p 80:8080 --name hello --link oceoracle:linksql $REGISTRY_URL/bj/hello:1.0
 
 
 if sudo docker images |grep none ; then

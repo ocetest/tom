@@ -13,7 +13,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 				<property name="username" value="admin" />
 				<property name="password" value="p@ssworD" /-->
 				<property name="driver" value="oracle.jdbc.OracleDriver" />
-                                <property name="url" value="jdbc:oracle:thin:@linksql:1521:xe" />
+                                <!--property name="url" value="jdbc:oracle:thin:@linksql:1521:xe" /-->
+                                <property name="url" value="jdbc:oracle:thin:@10.112.4.102:1521:xe" />
                                 <property name="username" value="admin" />
                                 <property name="password" value="p@ssworD" />
 
