@@ -11,7 +11,7 @@ REGISTRY_URL=ip:5000
 #fi
 #sudo docker create --name maven bj/maven:3.5.0
 if sudo docker ps -a | grep -i maven; then
-   sudo docker exec -it /bin/bash /opt/test.sh  > /dev/null 2>&1
+   sudo docker exec -it maven /bin/bash /opt/test.sh  > /dev/null 2>&1
 else
    sudo docker rm -f maven
    sudo docker build -t bj/maven:3.5.0 $WORKSPACE/maven
