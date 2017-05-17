@@ -3,7 +3,7 @@
 set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/jerry
-REGISTRY_URL=10.112.4.102:5000
+REGISTRY_URL=ip:5000
 #cp /opt/apache-maven-3.5.0-bin.tar.gz $WORKSPACE/maven
 #docker images | grep none | awk '{print $3}'| xargs docker rmi -f
 #if sudo docker ps -a | grep -i maven; then
@@ -15,7 +15,7 @@ if sudo docker ps -a | grep -i maven; then
 else
    sudo docker rm -f maven
    sudo docker build -t bj/maven:3.5.0 $WORKSPACE/maven
-   sudo docker run -d -p 2212:22  --name maven bj/maven:3.5.0
+   sudo docker run -d --name maven bj/maven:3.5.0
 fi
 #sudo docker create --name maven bj/maven:3.5.0
 #sudo docker run -d -p 2212:22  --name maven bj/maven:3.5.0
