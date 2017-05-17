@@ -15,6 +15,6 @@ request.setAttribute("name", name1);
 <body>
 <h1>Today webapps</h1>
 
-<h2>Finally Monday! You are  <%=name1 %> !</h2>
+<h2>Finally two! You are  <%=name1 %> !</h2>
 </body>
 </html>
