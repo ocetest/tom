@@ -15,6 +15,6 @@ request.setAttribute("name", name1);
 <body>
 <h1>update webapps</h1>
 
-<h2>Sucess or Failed! You are  <%=name1 %> !</h2>
+<h2>Finally testing! You are  <%=name1 %> !</h2>
 </body>
 </html>
