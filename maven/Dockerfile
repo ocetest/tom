@@ -15,6 +15,7 @@ ENV MAVEN_HOME /opt/maven
 
 COPY apache-maven-3.5.0-bin.tar.gz /opt/
 COPY ojdbc7.jar /opt/
+COPY test.sh /opt
 
 RUN tar xzf /opt/apache-maven-3.5.0-bin.tar.gz -C /opt && \
     mv /opt/apache-maven-${MAVEN_VERSION} /opt/maven  && \
