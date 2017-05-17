@@ -15,7 +15,7 @@ if sudo docker ps -a | grep -i maven; then
 else
    sudo docker rm -f maven
    sudo docker build -t bj/maven:3.5.0 $WORKSPACE/maven
-   sudo docker run -d --name maven bj/maven:3.5.0
+   sudo docker run -d p 2212:22 --name maven bj/maven:3.5.0
 fi
 #sudo docker create --name maven bj/maven:3.5.0
 #sudo docker run -d -p 2212:22  --name maven bj/maven:3.5.0
