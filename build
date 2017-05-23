@@ -18,7 +18,4 @@ if sudo docker images |grep none ; then
 fi
 
 
-
-
-
 exec "$@"
