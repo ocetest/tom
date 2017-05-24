@@ -3,7 +3,7 @@
 set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/npm
-sudo docker cp $WORKSPACE/ocetest/build/*  $WORKSPACE/ocetest/hello/src/main/webapp/
+sudo cp $WORKSPACE/ocetest/build/*  $WORKSPACE/ocetest/hello/src/main/webapp/
 
 
 if sudo docker ps -a | grep -i maven; then
