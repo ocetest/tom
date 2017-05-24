@@ -4,7 +4,7 @@ set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/npm
 if [ -d "$WORKSPACE/wlbuild" ];then
-    sudo cp $WORKSPACE/wlbuild/build/*  $WORKSPACE/hello/src/main/webapp/
+    sudo cp -r $WORKSPACE/wlbuild/build/*  $WORKSPACE/hello/src/main/webapp/
 fi
 
 
