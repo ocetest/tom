@@ -3,7 +3,9 @@
 set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/npm
-sudo cp $WORKSPACE/ocetest/build/*  $WORKSPACE/hello/src/main/webapp/
+if [ -d "$WORKSPACE/wlbuild" ];then
+    sudo cp $WORKSPACE/wlbuild/build/*  $WORKSPACE/hello/src/main/webapp/
+fi
 
 
 if sudo docker ps -a | grep -i maven; then
