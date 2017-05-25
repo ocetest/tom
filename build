@@ -10,6 +10,7 @@ fi
 
 
 if sudo docker ps -a | grep -i maven; then
+   sudo docker cp $WORKSPACE/maven2/maven/test.sh  maven:/opt/
    sudo docker cp $WORKSPACE/facilities maven:/
    sudo docker exec -i maven /bin/bash /opt/test.sh
 else
