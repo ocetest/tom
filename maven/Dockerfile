@@ -23,7 +23,7 @@ RUN tar xzf /opt/apache-maven-3.5.0-bin.tar.gz -C /opt && \
 
 COPY settings.xml /opt/maven/conf/settings.xml
 RUN cd /opt && \
-    mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar -Dfile=ojdbc7-12.1.0.1.jar
+    mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.1 -Dpackaging=jar -Dfile=ojdbc7-12.1.0.1.jar
 ADD facilities  /facilities
 RUN cd /facilities&& \
 #    mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
