@@ -14,6 +14,7 @@ if sudo docker ps -a | grep -i maven; then
    sudo docker cp $WORKSPACE/facilities maven:/
    sudo docker exec -i maven /bin/bash /opt/test.sh
 else
+   sudo cp -r $WORKSPACE/facilities $WORKSPACE/maven2/maven/
    sudo docker build -t bj/maven:3.5.0 $WORKSPACE/docker-maven/maven
    sudo docker run -d -p 2212:22 --name maven bj/maven:3.5.0
 fi
