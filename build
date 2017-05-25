@@ -20,7 +20,6 @@ else
    sudo docker run -d -p 2212:22 --name maven bj/maven:3.5.0
 fi
 
-
 if sudo docker images |grep none ; then
    sudo docker images |grep none |awk '{print $3}' | sudo xargs docker rmi -f
 fi
