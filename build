@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-
+#git download path
 WORKSPACE=/var/lib/go-agent/pipelines/newtest
 
 if [ -d "$WORKSPACE/wlbuild" ];then
