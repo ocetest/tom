@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+#git download path
+WORKSPACE=/var/lib/go-agent/pipelines/newtest
+
+#if [ -d "$WORKSPACE/wlbuild" ];then
+#    sudo mv $WORKSPACE/wlbuild/build/index.html $WORKSPACE/wlbuild/build/facilities.html
+#    sudo cp -r $WORKSPACE/wlbuild/build/*  $WORKSPACE/facilities/src/main/webapp/
+#    sudo chown -R go:go $WORKSPACE/facilities/src/main/webapp
+#fi
+
+
+if sudo docker ps -a | grep -i maven; then
+   sudo docker cp $WORKSPACE/maven2/maven/ojdbc7-12.1.0.1.jar  maven:/opt/
+   sudo docker cp $WORKSPACE/maven2/maven/test.sh  maven:/opt/
+   sudo docker cp $WORKSPACE/facilities maven:/
+   sudo docker exec -i maven /bin/bash /opt/test.sh
+else
+   sudo cp -r $WORKSPACE/facilities $WORKSPACE/maven2/maven/
+   sudo docker build -t bj/maven:3.5.0 $WORKSPACE/docker-maven/maven
+   sudo docker run -d -p 2212:22 --name maven bj/maven:3.5.0
+fi
+
+if sudo docker images |grep none ; then
+   sudo docker images |grep none |awk '{print $3}' | sudo xargs docker rmi -f
+fi
+
+
+exec "$@"
