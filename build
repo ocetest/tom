@@ -4,6 +4,7 @@ set -e
 
 WORKSPACE=/var/lib/go-agent/pipelines/newtest
 if [ -d "$WORKSPACE/wlbuild" ];then
+    sudo mv $WORKSPACE/wlbuild/build/index.html $WORKSPACE/wlbuild/build/facilities.html
     sudo cp -r $WORKSPACE/wlbuild/build/*  $WORKSPACE/facilities/src/main/webapp/
     sudo chown -R go:go $WORKSPACE/facilities/src/main/webapp
 fi
